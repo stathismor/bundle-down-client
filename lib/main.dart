@@ -83,37 +83,75 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             titlePadding: EdgeInsets.only(left: 20, bottom: 10),
           )),
-      body: SingleChildScrollView(
-          child: Column(children: [
-        new Image.asset("assets/images/salmon.jpg"),
-        new Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          new Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            SizedBox(height: 5),
-            DottedText(
-              "2 Plates Pacific King Salmon",
-              textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            new Text("Grilled w/ Ginger Soy Glaze, Bell Pepper & Mango Relish")
-          ]),
-          SizedBox(height: 5),
-          new Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            DottedText(
-              "1 Bottle 2016 Le Creme Chardonnay",
-              textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            )
-          ]),
-          SizedBox(height: 5),
-          new Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            DottedText(
-              "1 Loaf of Fresh Artisan Bread",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            new Text("House baked french bread, fresh from our wood oven")
-          ])
-        ]),
-      ])),
+      body: Center(
+          child: ConstrainedBox(
+              constraints: new BoxConstraints(
+                maxWidth: 600.0,
+              ),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    new Image.asset("assets/images/salmon.jpg"),
+                    new Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          new Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 5),
+                                DottedText(
+                                  "2 Plates Pacific King Salmon",
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                new Text(
+                                    "Grilled w/ Ginger Soy Glaze, Bell Pepper & Mango Relish")
+                              ]),
+                          SizedBox(height: 5),
+                          new Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                DottedText(
+                                  "1 Bottle 2016 Le Creme Chardonnay",
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ]),
+                          SizedBox(height: 5),
+                          new Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                DottedText(
+                                  "1 Loaf of Fresh Artisan Bread",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                new Text(
+                                    "House baked french bread, fresh from our wood oven")
+                              ]),
+                          new Container(
+                              margin: const EdgeInsets.only(top: 10),
+                              color: const Color(0xff42914A),
+                              height: 48.0,
+                              child: new FractionallySizedBox(
+                                  widthFactor: 1,
+                                  child: new Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text("Grouped Bundle Saving",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.white))
+                                      ])))
+                        ]),
+                  ]))),
     );
   }
 }
